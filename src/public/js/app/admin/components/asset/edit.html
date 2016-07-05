@@ -1,0 +1,40 @@
+<div class="modal-header">
+    <h3 class="modal-title"><span data-ng-bind="ctrl.mode"></span> asset</h3>
+</div>
+<div class="modal-body">
+    <form name="addAsset">
+        <div class="form-group">
+            <label for="assetName">Name</label>
+            <input id="assetName"
+                   name="assetName"
+                   data-ng-model="ctrl.asset.name"
+                   type="text"
+                   placeholder="Name"
+                   class="form-control input-md"
+                   required="required">
+            <div data-ng-messages="addAsset.assetName.$error" role="alert">
+                <div class="alert alert-danger" data-ng-message="required">You did not enter a name</div>
+            </div>
+        </div>
+        <div class="form-group" data-ng-if="ctrl.asset.type === 'remote'">
+            <label for="url">URL</label>
+            <input id="url"
+                   name="url"
+                   data-ng-model="ctrl.asset.url"
+                   type="text"
+                   placeholder="URL"
+                   class="form-control input-md"
+                   required="required">
+            <div data-ng-messages="addAsset.url.$error" role="alert">
+                <div class="alert alert-danger" data-ng-message="required">You did not enter a URL</div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button"
+            data-ng-click="ctrl.close()"
+            data-ng-disabled="(addAsset.$dirty && addAsset.$invalid)"
+            data-ng-bind="ctrl.mode"></button>
+    <button class="btn btn-default" type="button" data-ng-click="ctrl.cancel()">Cancel</button>
+</div>

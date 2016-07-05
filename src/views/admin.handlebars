@@ -1,0 +1,45 @@
+<div id="wrapper" data-ng-app="praesto.admin">
+
+    <a id="menu-toggle" class="btn" href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+
+    {{> sidebar}}
+
+    <ui-view></ui-view>
+
+</div>
+
+<toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button': true}"></toaster-container>
+
+<!-- global libs -->
+<script src="/socket.io/socket.io.js"></script>
+<script src="/components/angular/angular.min.js"></script>
+<script src="/components/angular-resource/angular-resource.min.js"></script>
+<script src="/components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="/components/angular-messages/angular-messages.min.js"></script>
+<script src="/components/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+<script src="/components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="/components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+<script src="/components/AngularJS-Toaster/toaster.js"></script>
+<script src="/components/markdown/lib/markdown.js"></script>
+
+<!-- app -->
+<script src="/js/app/shared/_bootstrap/_module.js"></script>
+<script src="/js/app/shared/filters/trust-url.js"></script>
+<script src="/js/app/shared/services/socket.js"></script>
+<script src="/js/app/admin/_bootstrap/_module.js"></script>
+<script src="/js/app/admin/application/config.js"></script>
+<script src="/js/app/admin/application/startup.js"></script>
+<script src="/js/app/admin/services/assets.js"></script>
+<script src="/js/app/admin/services/clients.js"></script>
+<script src="/js/app/admin/services/uuid.js"></script>
+<script src="/js/app/admin/services/pubsub.js"></script>
+<script src="/js/app/admin/components/assets/assets.js"></script>
+<script src="/js/app/admin/components/asset/asset.js"></script>
+<script src="/js/app/admin/components/send-to/send-to.js"></script>
+<script src="/js/app/admin/components/clients/clients.js"></script>
+<script src="/js/app/admin/components/client/client.js"></script>
+<script src="/js/app/admin/components/welcome/welcome.js"></script>
+<script src="/js/app/admin/components/support/support.js"></script>
+
+<!-- utils -->
+<script src="/js/app/admin/menu-toggle.js"></script>

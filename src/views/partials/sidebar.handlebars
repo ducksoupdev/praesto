@@ -1,0 +1,21 @@
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+            <a ui-sref="welcome" title="Praesto: verb - I provide, supply, offer, bestow">
+                Praesto
+            </a>
+        </li>
+        <li data-ng-class="{active: $state.includes('assets')}">
+            <a ui-sref="assets"><i class="fa fa-picture-o" aria-hidden="true"></i> Assets</a>
+        </li>
+        <li data-ng-class="{active: $state.includes('clients')}">
+            <a ui-sref="clients"><i class="fa fa-desktop" aria-hidden="true"></i> Clients</a>
+        </li>
+        <li data-ng-class="{active: $state.includes('support')}">
+            <a ui-sref="support"><i class="fa fa-question-circle" aria-hidden="true"></i> Support</a>
+        </li>
+    </ul>
+    <div class="sidebar-footer">
+      <p>Praesto by <a href="http://ducksoupdev.co.uk">@ducksoupdev</a></p>
+    </div>
+</div>

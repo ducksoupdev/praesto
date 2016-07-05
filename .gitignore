@@ -38,3 +38,7 @@ jspm_packages
 
 .idea/
 src/public/components
+node_modules/
+.sass-cache
+.vscode
+data/db.json

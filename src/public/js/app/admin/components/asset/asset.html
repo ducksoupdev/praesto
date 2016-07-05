@@ -1,0 +1,36 @@
+<div class="panel panel-default" data-ng-class="::{'panel-warning': !$ctrl.asset.id}">
+    <div class="panel-heading clearfix">
+        <div class="btn-group btn-group-sm pull-right" role="group" aria-label="Asset actions" data-ng-if="::$ctrl.asset.id">
+            <button type="button" class="btn btn-default" data-ng-click="$ctrl.edit()" title="Edit">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+                Edit
+            </button>
+            <button type="button" class="btn btn-default" data-ng-click="$ctrl.remove()" title="Delete">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+                Delete
+            </button>
+            <button type="button" class="btn btn-default" data-ng-click="$ctrl.preview()" title="Preview">
+                <i class="fa fa-eye" aria-hidden="true"></i>
+                Preview
+            </button>
+        </div>
+        <div class="panel-title-left">
+            <i class="fa" aria-hidden="true" data-ng-class="::$ctrl.getCssClass($ctrl.asset.type)"></i>
+            <span data-ng-bind="::$ctrl.asset.name"></span>
+        </div>
+    </div>
+    <div class="panel-body">
+        <dl>
+            <dt>Type</dt>
+            <dd class="type" data-ng-bind="::$ctrl.asset.type"></dd>
+            <dt>Created on</dt>
+            <dd class="created-on" data-ng-bind="::$ctrl.asset.createdOn | date:'medium'"></dd>
+        </dl>
+        <div class="button-options" data-ng-if="::$ctrl.asset.id">
+            <send-to asset="$ctrl.asset"></send-to>
+        </div>
+        <div class="button-options" data-ng-if="::!$ctrl.asset.id">
+            <button type="button" class="btn btn-primary" data-ng-click="$ctrl.add()">Add asset</button>
+        </div>
+    </div>
+</div>
