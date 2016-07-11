@@ -1,0 +1,16 @@
+<div id="page-content-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Assets</h1>
+                <div class="clearfix button-right">
+                    <button type="button" class="btn btn-default pull-right" data-ng-click="$ctrl.newAsset()">New asset</button>
+                </div>
+                <div class="asset-item" data-ng-repeat="assetInstance in $ctrl.assetList">
+                    <asset asset="assetInstance"></asset>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

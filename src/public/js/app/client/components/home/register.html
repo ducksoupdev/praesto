@@ -1,0 +1,28 @@
+<div class="modal-header">
+    <h3 class="modal-title">Register</h3>
+</div>
+<div class="modal-body">
+    <form name="registerDialog">
+        <div class="form-group">
+            <label for="clientName">Name:</label>
+            <input type="text"
+                   class="form-control input-md"
+                   name="clientName"
+                   id="clientName"
+                   data-ng-model="ctrl.clientName"
+                   data-ng-keyup="ctrl.hitEnter($event)"
+                   required="required">
+            <div data-ng-messages="registerDialog.clientName.$error" role="alert">
+                <div class="alert alert-danger" data-ng-message="required">You did not enter a name</div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button"
+            class="btn btn-primary"
+            data-ng-click="ctrl.register()"
+            data-ng-disabled="(registerDialog.$dirty && registerDialog.$invalid) || registerDialog.$pristine">Register
+    </button>
+    <button type="button" class="btn btn-default" data-ng-click="ctrl.cancel()">Cancel</button>
+</div>

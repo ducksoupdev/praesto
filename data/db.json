@@ -1,0 +1,19 @@
+{
+  "clients": [],
+  "assets": [
+    {
+      "type": "remote",
+      "name": "The Pack - YouTube",
+      "url": "http://www.youtube.com/embed/GsjDX5MQ6pg?autoplay=1",
+      "id": "df8870b6-e0fa-48f1-8bdd-2ea05122dba6",
+      "createdOn": "2017-07-01T10:00:00"
+    },
+    {
+      "type": "remote",
+      "name": "Lord, you are the light - Vimeo",
+      "url": "http://player.vimeo.com/video/171577757?autoplay=1",
+      "id": "cf49d6e2-7803-4e8c-8ec2-0e9c927f9adc",
+      "createdOn": "2017-07-01T10:30:00"
+    }
+  ]
+}

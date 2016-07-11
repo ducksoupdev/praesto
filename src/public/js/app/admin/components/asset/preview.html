@@ -1,0 +1,11 @@
+<div class="modal-header">
+    <h3 class="modal-title">Preview asset</h3>
+</div>
+<div class="modal-body">
+  <iframe data-ng-src="{{ctrl.asset.url | trustAsResourceUrl}}" class="asset">
+    Your browser doesn't support iframes
+  </iframe>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" type="button" data-ng-click="ctrl.cancel()">Close</button>
+</div>

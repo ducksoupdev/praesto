@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" class="demo2">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>ImageFit slideshow</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
+  <script type="text/javascript" src="js/jquery.imagefit.js"></script>
+  <script type="text/javascript">
+    function fitting() {
+      $('div.cycle-slideshow').imagefit({
+        mode: "outside",
+        force: true,
+        halign: "center",
+        valign: "middle"
+      });
+    }
+
+    $(window).load(function() {
+      fitting();
+
+      $(window).resize(function() {
+        fitting();
+      });
+    });
+  </script>
+</head>
+
+<body class="demo2">
+  <div class="cycle-slideshow" data-cycle-slide-css="{ 'position': 'absolute' }">
+    <img src="img/01.jpg" alt="">
+    <img src="img/02.jpg" alt="">
+    <img src="img/03.jpg" alt="">
+    <img src="img/04.jpg" alt="">
+    <img src="img/05.jpg" alt="">
+    <img src="img/06.jpg" alt="">
+  </div>
+</body>
+
+</html>

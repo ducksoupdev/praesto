@@ -1,0 +1,10 @@
+<div class="btn-group" uib-dropdown is-open="$ctrl.status.isOpen">
+    <button type="button" class="btn btn-default" uib-dropdown-toggle data-ng-disabled="$ctrl.status.disabled">
+        Send to client <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button" data-ng-if="$ctrl.clientList">
+        <li role="menuitem" class="client-item" data-ng-repeat="clientInstance in $ctrl.clientList"><a data-ng-click="$ctrl.sendToClient($event, clientInstance)" data-ng-bind="clientInstance.name"></a></li>
+        <li class="divider"></li>
+        <li role="menuitem" class="send-all"><a data-ng-click="$ctrl.sendToClient($event, { name: 'all' })">All clients</a></li>
+    </ul>
+</div>

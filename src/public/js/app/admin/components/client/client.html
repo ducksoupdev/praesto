@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <i class="fa fa-desktop" aria-hidden="true"></i>
+        <span class="client-name" data-ng-bind="$ctrl.client.name"></span>
+    </div>
+    <div class="panel-body">
+        <dl>
+            <dt>Registered on</dt>
+            <dd class="registered-on" data-ng-bind="::$ctrl.client.registeredOn | date:'medium'"></dd>
+            <dt>Displaying asset</dt>
+            <dd class="asset-name" data-ng-if="$ctrl.client.assetName" data-ng-bind="::$ctrl.client.assetName"></dd>
+            <dd class="asset-name" data-ng-if="!$ctrl.client.assetName">&lt;None&gt;</dd>
+        </dl>
+        <div class="button-options">
+            <button type="button" class="btn btn-primary" data-ng-disabled="!$ctrl.client.assetName" data-ng-click="$ctrl.reset()">Reset asset</button>
+        </div>
+    </div>
+</div>

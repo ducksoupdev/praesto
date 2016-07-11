@@ -1,0 +1,60 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "indent": [
+      "error",
+      2
+    ],
+    "linebreak-style": [
+      "error",
+      "windows"
+    ],
+    "quotes": [
+      "error",
+      "double"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "one-var": [
+      "error",
+      {
+        "uninitialized": "always",
+        "initialized": "never"
+      }
+    ],
+    "no-mixed-requires": [
+      "error",
+      {
+        "grouping": false,
+        "allowCall": false
+      }
+    ],
+    "new-cap": [
+      "error",
+      {
+        "capIsNew": false
+      }
+    ]
+  },
+  "globals": {
+    "io": false,
+    "__dirname": false,
+    "process": false,
+    "angular": false,
+    "beforeEach": false,
+    "beforeAll": false,
+    "afterAll": false,
+    "it": false,
+    "fit": false,
+    "describe": false,
+    "fdescribe": false,
+    "jasmine": false,
+    "expect": false
+  }
+}

@@ -1,0 +1,28 @@
+<div class="site-wrapper-inner">
+
+  <div class="cover-container" data-ng-hide="$ctrl.asset">
+
+    <div class="inner cover">
+      <h1 class="cover-heading">Praesto client</h1>
+      <div class="startup" data-ng-if="!$ctrl.clientName">
+        <p class="lead">Praesto is a tool for presenting slideshows, presentations, videos and more on multiple clients.</p>
+        <p class="lead">
+          <a data-ng-click="$ctrl.registerClient()" class="btn btn-lg btn-default">Register client</a>
+        </p>
+      </div>
+      <div id="registered" data-ng-if="$ctrl.clientName">
+        <p class="lead">Waiting for server...</p>
+      </div>
+    </div>
+
+    <div class="mastfoot">
+      <div class="inner">
+        <p>Praesto by <a href="http://ducksoupdev.co.uk">@ducksoupdev</a></p>
+      </div>
+    </div>
+
+  </div>
+
+  <asset url="$ctrl.asset.url" data-ng-if="$ctrl.asset"></asset>
+
+</div>

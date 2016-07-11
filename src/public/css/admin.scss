@@ -1,0 +1,35 @@
+@import "variables";
+
+@import "bootstrap_custom";
+@import "font-awesome";
+@import "sidebar";
+@import "toaster";
+@import "shared";
+
+.button-options {
+    margin-top: 10px;
+}
+
+.panel-heading {
+    .fa {
+        margin-right: 3px;
+    }
+    .panel-title-left {
+        padding-top: 5.5px;
+    }
+}
+
+.button-right {
+    margin-bottom: 10px;
+}
+
+.modal.preview {
+  .modal-body {
+    position: relative;
+    min-height: 500px;
+    padding: 0;
+    .asset {
+      position: absolute;
+    }
+  }
+}
