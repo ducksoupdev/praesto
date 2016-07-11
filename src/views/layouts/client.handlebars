@@ -1,15 +1,26 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>{{title}}</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="/js/app/client/manifest.json">
+    <!-- apple icons -->
+    <link rel="apple-touch-icon" href="/img/touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/touch-icon-ipad-retina.png">
+    <!-- android icons -->
+    <link rel="icon" sizes="192x192" href="/img/touch-icon-android-retina.png">
+    <link rel="icon" sizes="128x128" href="/img/touch-icon-android.png">
+    <title>Praesto</title>
     <link rel="stylesheet" href="/css/client.css">
     {{#if ENV_DEVELOPMENT}}
         <script src="http://localhost:35729/livereload.js"></script>
     {{/if}}
-</head>
-<body>
-{{{body}}}
-</body>
+  </head>
+  <body>
+    {{{body}}}
+  </body>
 </html>

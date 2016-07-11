@@ -8054,38 +8054,30 @@ body {
 
 .cover-container {
   margin-right: auto;
-  margin-left: auto; }
+  margin-left: auto;
+  height: 500px; }
 
 /* Padding for spacing */
 .inner {
   padding: 30px; }
 
 .cover {
-  padding: 0 20px; }
+  padding: 0 20px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); }
   .cover .btn-lg, .cover .btn-group-lg > .btn {
     padding: 10px 20px;
     font-weight: bold; }
 
 .mastfoot {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   color: #999;
   /* IE8 proofing */
   color: rgba(255, 255, 255, 0.5); }
-
-@media (min-width: 768px) {
-  .mastfoot {
-    position: fixed;
-    bottom: 0; }
-  /* Start the vertical centering */
-  .site-wrapper-inner {
-    vertical-align: middle; }
-  /* Handle the widths */
-  .mastfoot, .cover-container {
-    width: 100%;
-    /* Must be percentage or pixels for horizontal alignment */ } }
-
-@media (min-width: 992px) {
-  .mastfoot, .cover-container {
-    width: 700px; } }
 
 /*
  * Toastr
