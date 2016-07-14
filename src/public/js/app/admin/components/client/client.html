@@ -12,6 +12,9 @@
             <dd class="asset-name" data-ng-if="!$ctrl.client.assetName">&lt;None&gt;</dd>
         </dl>
         <div class="button-options">
+            <asset-popup client="$ctrl.client"></asset-popup>
+        </div>
+        <div class="button-options">
             <button type="button" class="btn btn-primary" data-ng-disabled="!$ctrl.client.assetName" data-ng-click="$ctrl.reset()">Reset asset</button>
         </div>
     </div>

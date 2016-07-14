@@ -1,0 +1,8 @@
+<div class="btn-group" uib-dropdown is-open="$ctrl.status.isOpen">
+    <button type="button" class="btn btn-default" uib-dropdown-toggle data-ng-disabled="$ctrl.status.disabled">
+        Send asset <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button" data-ng-if="$ctrl.assetList">
+        <li role="menuitem" class="asset-item" data-ng-repeat="assetInstance in $ctrl.assetList"><a data-ng-click="$ctrl.sendAsset($event, assetInstance)" data-ng-bind="assetInstance.name"></a></li>
+    </ul>
+</div>

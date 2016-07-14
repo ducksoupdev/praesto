@@ -59,7 +59,6 @@ You may have to create a symlink to node in `/usr/bin/node` if `node -v` doesn't
 Install dependencies and update node permissions:
 
 	sudo npm update -g
-	sudo npm install -g bower
 	sudo chown -R pi:pi /usr/local/lib/node_modules
 	npm update -g
 
