@@ -2,8 +2,8 @@
   "use strict";
 
   angular.module("praesto.admin")
-    .component("assetPopup", {
-      templateUrl: "js/app/admin/components/asset-popup/asset-popup.html",
+    .component("assetMultiple", {
+      templateUrl: "js/app/admin/components/asset-multiple/asset-multiple.html",
       controller: AssetPopupController,
       bindings: {
         client: "="
@@ -18,10 +18,11 @@
       disabled: true,
       isOpen: false
     };
+    that.timeout = 120;
     that.assetList = null;
     that.selectedAssetList = [];
-    that.sendButtonText = "Select assets";
-    that.sendButtonTitle = "Select assets";
+    that.dropdownText = "Select assets";
+    that.dropdownTitle = "Select assets";
 
     that.sendAssets = function () {
       event.preventDefault();
@@ -50,11 +51,11 @@
 
     function setSendButtonText() {
       if (this.selectedAssetList.length) {
-        this.sendButtonText = "Send " + this.selectedAssetList.length + " asset" + (this.selectedAssetList.length !== 1 ? "s": "");
-        this.sendButtonTitle = "Send asset" + (this.selectedAssetList.length !== 1 ? "s": "") + " to " + this.client.name + ": " + this.selectedAssetList.map(function(o) { return o.name; }).join(", ");
+        this.dropdownText = this.selectedAssetList.length + " asset" + (this.selectedAssetList.length !== 1 ? "s": "");
+        this.dropdownTitle = "Selected asset" + (this.selectedAssetList.length !== 1 ? "s": "") + ": " + this.selectedAssetList.map(function(o) { return o.name; }).join(", ");
       } else {
-        this.sendButtonText = "Select assets";
-        this.sendButtonTitle = "Select assets";
+        this.dropdownText = "Select assets";
+        this.dropdownTitle = "Select assets";
       }
     }
 

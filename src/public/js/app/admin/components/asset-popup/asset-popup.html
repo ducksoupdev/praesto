@@ -1,8 +1,29 @@
 <div class="btn-group" uib-dropdown is-open="$ctrl.status.isOpen">
-    <button type="button" class="btn btn-default" uib-dropdown-toggle data-ng-disabled="$ctrl.status.disabled">
-        Send asset <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button" data-ng-if="$ctrl.assetList">
-        <li role="menuitem" class="asset-item" data-ng-repeat="assetInstance in $ctrl.assetList"><a data-ng-click="$ctrl.sendAsset($event, assetInstance)" data-ng-bind="assetInstance.name"></a></li>
-    </ul>
+  <button type="button"
+          class="btn btn-default"
+          data-ng-disabled="!$ctrl.assetList || $ctrl.assetList.length === 0 || $ctrl.status.disabled"
+          data-ng-click="$ctrl.sendAssets()"
+          title="{{$ctrl.sendButtonTitle}}"
+          data-ng-bind="$ctrl.sendButtonText"></button>
+  <button type="button"
+          class="btn btn-default"
+          uib-dropdown-toggle
+          data-ng-disabled="!$ctrl.assetList || $ctrl.assetList.length === 0"
+          aria-haspopup="true"
+          aria-expanded="false">
+    <span class="caret"></span>
+    <span class="sr-only">Select asset</span>
+  </button>
+  <ul class="dropdown-menu"
+      uib-dropdown-menu
+      role="menu"
+      aria-labelledby="single-button"
+      data-ng-if="$ctrl.assetList">
+    <li role="menuitem" class="asset-item" data-ng-repeat="assetInstance in $ctrl.assetList">
+      <a data-ng-click="$ctrl.addAsset($event, assetInstance)">
+        <span class="fa fa-check" data-ng-class="{'fa-blank': !assetInstance.selected}"></span>
+        <span data-ng-bind="assetInstance.name"></span>
+      </a>
+    </li>
+  </ul>
 </div>

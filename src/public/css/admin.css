@@ -8365,6 +8365,8 @@ button.toast-close-button {
 
 .button-options {
   margin-top: 10px; }
+  .button-options > *:not(:first-child) {
+    margin-left: 8px; }
 
 .panel-heading .fa {
   margin-right: 3px; }
@@ -8381,3 +8383,6 @@ button.toast-close-button {
   padding: 0; }
   .modal.preview .modal-body .asset {
     position: absolute; }
+
+.fa-blank {
+  visibility: hidden; }
