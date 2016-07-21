@@ -51,7 +51,13 @@ var handlers = function (socket) {
   });
 
   socket.on("client:asset", function (data) {
-    saveAssetToClient(data.client.name, data.asset.name);
+    var nameToSave;
+    if (data.hasOwnProperty("assetList")) {
+      nameToSave = data.assetList.map(function(a) { return a.name; }).join(", ");
+    } else {
+      nameToSave = data.asset.name;
+    }
+    saveAssetToClient(data.client.name, nameToSave);
     socket.broadcast.emit("client:show", data);
   });
 

@@ -28,6 +28,7 @@
       event.preventDefault();
       socketService.emit("client:asset", {
         assetList: that.selectedAssetList,
+        timeout: that.timeout,
         client: that.client
       });
     };

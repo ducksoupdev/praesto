@@ -38,12 +38,19 @@
   function HomeController($timeout, socketService, localStorageService, $uibModal) {
     var that = this;
     that.asset = null;
+    that.assetList = null;
     that.clientName = null;
+    that.timeout = 120;
 
     socketService.on("client:show", function (data) {
       if (data.client.name === "all" || data.client.name === that.clientName) {
         $timeout(function () {
-          that.asset = data.asset;
+          if (data.hasOwnProperty("assetList")) {
+            that.assetList = data.assetList;
+            that.timeout = data.timeout;
+          } else {
+            that.asset = data.asset;
+          }
         });
       }
     });
