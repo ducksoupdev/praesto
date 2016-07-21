@@ -6,7 +6,7 @@
       templateUrl: "js/app/admin/components/send-to/send-to.html",
       controller: SendToController,
       bindings: {
-        asset: "="
+        asset: "<"
       }
     });
 
@@ -22,26 +22,28 @@
 
     that.clientList = null;
 
-    socketService.on("client:changed", function () {
-      that.init();
-    });
-
-    socketService.on("client:disconnected", function () {
-      that.init();
-    });
-
-    that.init = function () {
+    var loadClients = function() {
       clientService
         .getClients()
         .then(function (clientList) {
           that.clientList = clientList;
-          that.updateStatus.apply(that);
+          that.updateStatus();
         }, function (err) {
           toaster.pop("error", "An error occurred", err.message, 0);
         });
     };
 
-    that.init();
+    that.$onInit = function () {
+      socketService.on("client:changed", function () {
+        loadClients();
+      });
+
+      socketService.on("client:disconnected", function () {
+        loadClients();
+      });
+
+      loadClients();
+    };
 
     that.sendToClient = function (event, client) {
       event.preventDefault();

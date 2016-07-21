@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "angular": "^1.5.7",
+    "angular-confirm": "^1.2.5",
     "angular-local-storage": "^0.2.7",
     "angular-messages": "^1.5.7",
     "angular-resource": "^1.5.7",

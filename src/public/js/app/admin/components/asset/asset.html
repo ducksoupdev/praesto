@@ -5,7 +5,7 @@
                 <i class="fa fa-pencil" aria-hidden="true"></i>
                 Edit
             </button>
-            <button type="button" class="btn btn-default" data-ng-click="$ctrl.remove()" title="Delete">
+            <button type="button" class="btn btn-default" data-ng-click="$ctrl.remove()" confirm="Are you sure you want to remove '{{$ctrl.asset.name}}'?" title="Delete">
                 <i class="fa fa-trash" aria-hidden="true"></i>
                 Delete
             </button>
@@ -16,7 +16,7 @@
         </div>
         <div class="panel-title-left">
             <i class="fa" aria-hidden="true" data-ng-class="::$ctrl.getCssClass($ctrl.asset.type)"></i>
-            <span data-ng-bind="::$ctrl.asset.name"></span>
+            <span data-ng-bind="$ctrl.asset.name"></span>
         </div>
     </div>
     <div class="panel-body">

@@ -6,7 +6,7 @@
       templateUrl: "js/app/admin/components/asset/asset.html",
       controller: AssetController,
       bindings: {
-        asset: "="
+        asset: "<"
       }
     });
 

@@ -4,15 +4,15 @@
   angular.module("praesto.admin")
     .component("assetMultiple", {
       templateUrl: "js/app/admin/components/asset-multiple/asset-multiple.html",
-      controller: AssetPopupController,
+      controller: AssetMultipleController,
       bindings: {
-        client: "="
+        client: "<"
       }
     });
 
-  AssetPopupController.$inject = ["toaster", "assetService", "socketService"];
+  AssetMultipleController.$inject = ["toaster", "assetService", "socketService", "pubsubService"];
 
-  function AssetPopupController(toaster, assetService, socketService) {
+  function AssetMultipleController(toaster, assetService, socketService, pubsubService) {
     var that = this;
     that.status = {
       disabled: true,
@@ -28,9 +28,10 @@
       event.preventDefault();
       socketService.emit("client:asset", {
         assetList: that.selectedAssetList,
-        timeout: that.timeout,
+        timeout: that.timeout * 1000,
         client: that.client
       });
+      pubsubService.publish("sendAssets", {});
     };
 
     that.addAsset = function (event, asset) {
@@ -60,7 +61,7 @@
       }
     }
 
-    that.init = function () {
+    that.$onInit = function () {
       assetService
         .getAssets()
         .then(function (assetList) {
@@ -69,7 +70,5 @@
           toaster.pop("error", "An error occurred", err.message, 0);
         });
     };
-
-    that.init();
   }
 })();

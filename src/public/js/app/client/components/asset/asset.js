@@ -5,7 +5,7 @@
     .component("asset", {
       templateUrl: "js/app/client/components/asset/asset.html",
       bindings: {
-        url: "="
+        url: "<"
       }
     });
 })();
