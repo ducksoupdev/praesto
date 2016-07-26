@@ -7,21 +7,13 @@
       controller: ClientsController
     });
 
-  ClientsController.$inject = ["socketService", "clientService", "toaster"];
+  ClientsController.$inject = ["socketService", "clientService", "toaster", "pubsubService"];
 
-  function ClientsController(socketService, clientService, toaster) {
+  function ClientsController(socketService, clientService, toaster, pubsubService) {
     var that = this;
     that.clientList = null;
 
-    socketService.on("client:changed", function () {
-      that.init();
-    });
-
-    socketService.on("client:disconnected", function () {
-      that.init();
-    });
-
-    that.init = function () {
+    var loadClients = function () {
       clientService
         .getClients()
         .then(function (clientList) {
@@ -31,6 +23,19 @@
         });
     };
 
-    that.init();
+    that.$onInit = function () {
+      // set up asset subscriptions
+      pubsubService.subscribe("sendAssets", loadClients);
+
+      socketService.on("client:changed", function () {
+        loadClients();
+      });
+
+      socketService.on("client:disconnected", function () {
+        loadClients();
+      });
+
+      loadClients();
+    };
   }
 })();

@@ -15,11 +15,12 @@ module.exports = function (config) {
     files: [
       "node_modules/jquery/dist/jquery.min.js",
       "node_modules/jasmine-jquery/lib/jasmine-jquery.js",
-      "node_modules/socket.io/node_modules/socket.io-client/socket.io.js",
+      "node_modules/socket.io-client/socket.io.js",
       "node_modules/angular/angular.min.js",
       "node_modules/angular-mocks/angular-mocks.js",
       "node_modules/angular-resource/angular-resource.min.js",
       "node_modules/angular-sanitize/angular-sanitize.min.js",
+      "node_modules/angular-confirm/angular-confirm.min.js",
       "node_modules/angular-messages/angular-messages.min.js",
       "node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js",
       "node_modules/angular-ui-router/release/angular-ui-router.min.js",

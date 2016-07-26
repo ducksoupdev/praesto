@@ -32,7 +32,7 @@
       assetService
         .saveAsset(assetToSave)
         .then(function () {
-          that.init();
+          loadAssets();
         }, function (err) {
           toaster.pop("error", "An error occurred", err.message, 0);
         });
@@ -42,17 +42,13 @@
       assetService
         .removeAsset(assetToRemove)
         .then(function () {
-          that.init();
+          loadAssets();
         }, function (err) {
           toaster.pop("error", "An error occurred", err.message, 0);
         });
     };
 
-    // set up asset subscriptions
-    pubsubService.subscribe("saveAsset", saveAsset);
-    pubsubService.subscribe("removeAsset", removeAsset);
-
-    that.init = function () {
+    var loadAssets = function() {
       assetService
         .getAssets()
         .then(function (assetList) {
@@ -60,6 +56,14 @@
         }, function (err) {
           toaster.pop("error", "An error occurred", err.message, 0);
         });
+    };
+
+    that.$onInit = function () {
+      // set up asset subscriptions
+      pubsubService.subscribe("saveAsset", saveAsset);
+      pubsubService.subscribe("removeAsset", removeAsset);
+
+      loadAssets();
     };
 
     that.newAsset = function () {
@@ -81,7 +85,5 @@
         saveAsset(newAsset);
       });
     };
-
-    that.init();
   }
 })();

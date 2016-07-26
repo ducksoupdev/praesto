@@ -1,4 +1,3 @@
-/* global io */
 (function () {
   angular
     .module("praesto.shared", [])

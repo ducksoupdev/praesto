@@ -8,6 +8,7 @@
 
   function assetService($q, $resource, uuidService) {
     var that = this;
+
     that.getAssets = function () {
       return $q(function (resolve, reject) {
         var resource = $resource("/api/assets", {}, {

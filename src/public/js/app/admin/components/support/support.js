@@ -14,13 +14,11 @@
     that.markdownPreview = null;
     var assetsMarkdownUrl = "/docs/assets.md";
 
-    that.init = function () {
+    that.$onInit = function () {
       $http({ method: "GET", url: assetsMarkdownUrl })
         .success(function (data) {
           that.markdownPreview = markdown.toHTML(data);
         });
     };
-
-    that.init();
   }
 })();

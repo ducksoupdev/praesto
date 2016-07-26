@@ -14,20 +14,6 @@
       "url": "http://player.vimeo.com/video/171577757?autoplay=1",
       "id": "cf49d6e2-7803-4e8c-8ec2-0e9c927f9adc",
       "createdOn": "2017-07-01T10:30:00"
-    },
-    {
-      "name": "sample-presentation-1",
-      "type": "local",
-      "createdOn": "2016-07-01T19:30:43.636Z",
-      "url": "/assets/sample-presentation-1",
-      "id": "0b6fd4e4-de10-4f6d-89c5-48da4cef6392"
-    },
-    {
-      "name": "sample-fullscreen-slideshow-1",
-      "type": "local",
-      "createdOn": "2016-07-11T14:00:04.273Z",
-      "url": "/assets/sample-fullscreen-slideshow-1",
-      "id": "a4cb8839-696c-47fc-ab5a-e703856f26c2"
     }
   ]
 }

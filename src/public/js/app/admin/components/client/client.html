@@ -8,11 +8,16 @@
             <dt>Registered on</dt>
             <dd class="registered-on" data-ng-bind="::$ctrl.client.registeredOn | date:'medium'"></dd>
             <dt>Displaying asset</dt>
-            <dd class="asset-name" data-ng-if="$ctrl.client.assetName" data-ng-bind="::$ctrl.client.assetName"></dd>
+            <dd class="asset-name" data-ng-if="$ctrl.client.assetName">
+              <p>
+                <span data-ng-bind="::$ctrl.client.assetName"></span>
+                <button type="button" class="btn btn-primary btn-xs" data-ng-disabled="!$ctrl.client.assetName" data-ng-click="$ctrl.reset()">Reset</button>
+              </p>
+            </dd>
             <dd class="asset-name" data-ng-if="!$ctrl.client.assetName">&lt;None&gt;</dd>
         </dl>
-        <div class="button-options">
-            <button type="button" class="btn btn-primary" data-ng-disabled="!$ctrl.client.assetName" data-ng-click="$ctrl.reset()">Reset asset</button>
-        </div>
+    </div>
+    <div class="panel-footer">
+      <asset-multiple client="$ctrl.client"></asset-multiple>
     </div>
 </div>

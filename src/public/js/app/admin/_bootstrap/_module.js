@@ -9,7 +9,8 @@
       "ui.bootstrap",
       "ui.router",
       "toaster",
-      "LocalStorageModule"
+      "LocalStorageModule",
+      "angular-confirm"
     ])
     .constant("markdown", markdown);
 })();

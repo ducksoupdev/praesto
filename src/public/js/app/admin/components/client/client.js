@@ -6,7 +6,7 @@
       templateUrl: "js/app/admin/components/client/client.html",
       controller: ClientController,
       bindings: {
-        client: "="
+        client: "<"
       }
     });
 
@@ -23,15 +23,9 @@
       }
     });
 
-    that.init = function () {
-
-    };
-
     that.reset = function () {
       socketService.emit("client:reset", that.client);
       that.client.assetName = null;
     };
-
-    that.init();
   }
 })();

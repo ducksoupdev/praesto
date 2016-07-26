@@ -3,10 +3,12 @@
   "version": "0.1.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "develop": "nodemon start.js"
   },
   "dependencies": {
     "angular": "^1.5.7",
+    "angular-confirm": "^1.2.5",
     "angular-local-storage": "^0.2.7",
     "angular-messages": "^1.5.7",
     "angular-resource": "^1.5.7",
@@ -47,6 +49,8 @@
     "karma-jasmine": "^1.0.2",
     "karma-mocha-reporter": "^2.0.4",
     "karma-phantomjs-launcher": "^1.0.1",
+    "node-sass": "^3.8.0",
+    "nodemon": "^1.9.2",
     "phantomjs-prebuilt": "^2.1.7",
     "socket-io-mock": "^1.0.1",
     "superagent": "^2.0.0"
