@@ -13,6 +13,7 @@ RUN chown -R app:app $HOME/*
 USER app
 WORKDIR $HOME/praesto
 RUN npm install
+RUN npm install -g forever
 
 USER root
 COPY . $HOME/praesto
@@ -20,4 +21,4 @@ RUN chown -R app:app $HOME/*
 USER app
 
 EXPOSE 3000
-CMD ["npm", "start"]
+CMD ["forever", "start", "--minUptime", "1000", "--spinSleepTime", "1000", "./bin/www"]
