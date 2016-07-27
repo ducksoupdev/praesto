@@ -13,10 +13,10 @@ RUN chown -R app:app $HOME/*
 USER app
 WORKDIR $HOME/praesto
 RUN npm install
-RUN npm install -g forever
 
 USER root
 COPY . $HOME/praesto
+RUN npm install -g forever
 RUN chown -R app:app $HOME/*
 USER app
 
